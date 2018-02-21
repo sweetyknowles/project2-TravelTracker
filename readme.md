@@ -27,11 +27,14 @@ Planning Process
 
 ERDs- (Entity Relationship Diagram) -provided images
 
-https://i.imgur.com/kQGszWI.jpg
+https://i.imgur.com/kQGszWI.jpg --MVP ERD
+https://i.imgur.com/OrxyjYb.jpg -- InDepth ERD
 
 Wireframes-designed during the planning process.
 
-https://i.imgur.com/OrxyjYb.jpg
+Heroku Link
+
+https://tranquil-coast-28703.herokuapp.com/
 
 clean HTML and CSS
 Deployed online and accessible to the public via Heroku
