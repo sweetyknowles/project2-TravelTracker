@@ -1,18 +1,18 @@
-Travel Tracker App.
+**Travel Tracker App.**
 
 Overview
 Travel Tracker is a full stack application, that will help its users to keep track of their travel plans. The app will have two options for the user to keep the travel arrangmentsplannig hassle free. The user can add to his/her destinations' wish list t be travelled in future. The user will also be able to keep track of the places that he/she has already travelled(if he is  frequent a traveller with dates.) 
 
-Project Links
+**Project Links**
 
 Heroku
 Trello Board
 
-*************
-Technical Specifications
-Travel Tracker App:
+*********************************************
+**Technical Specifications**
 
-Three models
+
+**Three models**
 
 The user: who will be using the app to store data about his travels.  
 Data for Destination Wish List : This will have the collection of wished to be travelled destinatins.
@@ -22,8 +22,8 @@ Travel Tracker has a Complete RESTful routes for at least one resource, in ths c
 
 This app uses Mongo queries and the Mongoose module to communicate with a document database.
 There will be Promises to help build some queries.
-****
-Planning Process
+*****************************************
+**Planning Process**
 
 ERDs- (Entity Relationship Diagram) -provided images
 
