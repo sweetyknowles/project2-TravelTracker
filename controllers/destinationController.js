@@ -69,7 +69,7 @@ router.get('/:id', (req, res) => {
   Profile.findById(req.params.profileId).then((profile) => {
 
     // Use the .id method to extract a single profile from destinations.profile
-    const profile = profiles.destination.id(req.params.id)
+    //const profile = profiles.destination.id(req.params.id)
 
     // connect it to a soda/show view
     res.render('destination/show', {
@@ -87,7 +87,7 @@ router.get('/:id/edit', (req, res) => {
   // to connect the initial values to this edit page
   Profile.findById(req.params.profileId).then((profile) => {
     const destination = profile.destination.id(req.params.id)
-    res.render('destination/edit', {
+    res.render('profile/edit', {
       destinationId: req.params.destinationId,
       destination: destination
     })
@@ -124,11 +124,12 @@ router.delete('/:id', (req, res) => {
     destination.remove()
     return profile.save()
   }).then(() => {
+    .catch((err)) =>("Profile saved succesfully")
     res.redirect(`/profiles/${req.params.profileId}/destinations`)
   }).catch((err) => {
     console.log(err)
   })
-})
+
 
 
 module.exports = router

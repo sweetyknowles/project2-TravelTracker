@@ -7,7 +7,7 @@ const profileSchema = new Schema({
   location: Number,
   phonenumber: Number, 
   photo: String,
-  destinations: [destinationSchema]
+  
 })
 
 module.exports = profileSchema

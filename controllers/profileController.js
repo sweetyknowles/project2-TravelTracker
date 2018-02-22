@@ -89,7 +89,7 @@ router.patch('/:id', (req, res) => {
   }, { new: true }).then((updatedProfile) => {
 
     // Redirect to the show page once it successfully updates
-    res.redirect(`/destinations/${updatedProfile._id}`)
+    res.redirect(`/profiles/${updatedProfile._id}`)
   })
 })
 
