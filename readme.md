@@ -24,7 +24,6 @@ This app uses Mongo queries and the Mongoose module to communicate with a docume
 There will be Promises to help build some queries.
 *****************************************
 **Planning Process**
-
 ERDs- (Entity Relationship Diagram) -provided images
 
 https://i.imgur.com/kQGszWI.jpg --MVP ERD
@@ -38,3 +37,4 @@ https://tranquil-coast-28703.herokuapp.com/
 
 clean HTML and CSS
 Deployed online and accessible to the public via Heroku
+ via Heroku
