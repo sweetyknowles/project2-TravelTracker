@@ -68,7 +68,7 @@ router.get('/:id/edit', (req, res) => {
   Destination.findById(req.params.id).then((destination) => {
 
     // THEN render that and id into a handlebars view and pass the company from our db into hbs
-    res.render('c/edit', {
+    res.render('destination/edit', {
       id: req.params.id,
       destination: destination
     })
