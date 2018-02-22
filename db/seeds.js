@@ -1,7 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-const Profile = require('../models/profile')
-const Destination = require('../models/destination')
+const Profile = require('../models/destination')
+const Destination = require('../models/profile')
 
 // separate from the server
 
@@ -14,35 +14,70 @@ db.on('error', (err) => {
     console.log(err)
 })
 
+const italy = new Destination ({
+    name: "",
+    location: '',
+    image: ''
+})
+
+const belgium = new Destination ({
+    name: "",
+    location: '',
+    image: ''
+})
+const rome = new Destination ({
+    name: "",
+    location: '',
+    image: ''
+})
+const texas = new Destination ({
+    name: "",
+    location: '',
+    image: ''
+})
+
+
 const user1 = new Profile({
-    name: 'Cam',
-    location: 'Atlanta',
-    phone: '884028402',
+    name: 'Larry',
+    location: 'Los Angeles',
+    phonenumber: 4448383845823,
+    photo: `"images/larry.jpg" alt="actor"`,
+    desinations: [italy]
 })
 
 const user2 = new Profile({
     name: 'James',
     location: 'Chicago',
-    phone: '884028402',
+    phonenumber: 884028402,
+    desinations: [texas, italy]
 })
 const user3 = new Profile({
     name: 'Zuriel',
     location: 'United Kingom',
-    phone: '4470384738',
+    phonenumber: 4470384738,
+    desinations: [rome]
 })
+const user4 = new Profile({
+    name: 'sam',
+    location: 'United Kingom',
+    phonenumber: 4470384738,
+    desinations: [belgium]
+})
+
+
 
 //remove all old information
 //returns a promise. this is asynchronise 
 
-Profile.remove().then(() => {
+Destination.remove().then(() => {
     //returns another promise here. 
 
-    return Destination.remove()
+    return Profile.remove()
 }).then(() => {
     /// build out new sodas and companies
     // and save them to the database
 
-    return Destination.insertMany([user3, user2])
+    return Profile.insertMany([user1, user2, user3,user4])
 }).then(() => {
     console.log('Saved succeffully')
     db.close()

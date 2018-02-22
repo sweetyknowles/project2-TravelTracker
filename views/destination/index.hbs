@@ -41,8 +41,15 @@
       <ul>
         {{#each destinations}}
         <li>
-          <a href="/destinations/{{_id}}">{{name}}</a>
+          <a href="/destinations/{{_id}}">
+          
+          <div>
+            {{name}}
+            {{location}}
+            </div>
+          </a>
         </li>
+        <img src="{{Photo}}">
         {{/each}}
       </ul>
 

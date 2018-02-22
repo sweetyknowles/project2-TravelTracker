@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
-const profileSchema = require('./profileSchema')
 const Schema = mongoose.Schema
 
-const destinationSchema = new Schema({
+
+const profileSchema = new Schema({
   name: String,
-  location: String,
-  profiles: [ profileSchema ]
+  location: Number,
+  phonenumber: Number, 
+  photo: String,
+  destinations: [destinationSchema]
 })
 
-module.exports = destinationSchema
+module.exports = profileSchema
