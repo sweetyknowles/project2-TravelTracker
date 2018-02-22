@@ -1,0 +1,15 @@
+<h1>Edit {{destination.name}}</h1>
+<form method="POST" action="/destinations/{{id}}?_method=PATCH">
+  <div>
+    <label for="name">Name of Destination</label>
+    <input type="text" name="name" value="{{destination.name}}">
+  </div>
+  <div>
+    <label for="location">Location</label>
+    <input type="text" name="location" value="{{destination.location}}">
+  </div>
+  
+  <button type="submit">Add destination</button>
+</form>
+
+<a href="/destinations/{{id}}">Back to {{destination.name}}</a>

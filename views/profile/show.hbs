@@ -1,0 +1,11 @@
+<h1>{{profile.name}}</h1>
+
+<p>{{profile.location}}</p>
+<p>{{profile.destinations}}</p>
+<p>{{profile.quantitySold}}</p>
+
+<a href="/destinations/{{destiantionId}}/profiles/{{profile._id}}/edit">Edit {{profile.name}}</a>
+
+<form method="POST" action="/destinations/{{destinationId}}/profile/{{profile._id}}?_method=DELETE">
+  <button type="submit">Delete This Profile</button>
+</form>

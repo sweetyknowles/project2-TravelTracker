@@ -1,0 +1,10 @@
+<h1>{{destination.name}}'s Profile</h1>
+
+{{#each profiles}}
+  <div>
+    <a href="/destinations/{{../destinations._id}}/profiles/{{_id}}">{{name}}</a>
+  </div>
+{{/each}}
+
+<a href="/destinations/{{destination._id}}/profile/new">New Profile</a>
+<a href="/destinations/{{destination._id}}">Back To Destination Page</a>

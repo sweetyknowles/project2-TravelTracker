@@ -1,0 +1,9 @@
+<h1> Profile Destinations</h1>
+
+<ul>
+  {{#each destinations}}
+    <li><a href="/destinations/{{_id}}" >{{name}}</a></li>
+  {{/each}}
+</ul>
+
+<a href="/destinations/new">New destination</a>

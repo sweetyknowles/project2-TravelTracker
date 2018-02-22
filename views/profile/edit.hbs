@@ -1,0 +1,27 @@
+<h1>Edit Profile</h1>
+<form method="POST" action="/destinations/{{destinationId}}/profiles/{{profile._id}}?_method=PATCH">
+ <div>
+    <label for="name">Profile</label>
+    <input type="text" name="name" value="{{profile.name}}">
+  </div>
+  <div>
+    <label for="location">location</label>
+    <input type="text" name="location" value="{{profile.location}}">
+  </div>
+  <div>
+    <label for="destinations">Desinations</label>
+    <select name="destinations" selected="{{profile.destinations}}">
+      <option value="can">Can</option>
+      <option value="bottle">Bottle</option>
+    </select>
+  </div>
+  {{!-- <div>
+    <label for="quantitySold">Quantity Sold</label>
+    <input type="text" name="quantitySold" value="{{soda.quantitySold}}">
+  </div> --}}
+  
+  <button type="submit">Edit Profile</button>
+  
+
+</form>
+<a href="/trackers/{{destinationId}}/profiles/{{._id}}">Go Back</a>
