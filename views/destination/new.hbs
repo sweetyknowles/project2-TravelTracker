@@ -1,4 +1,4 @@
-<h1>Create a New Destination</h1>
+{{!-- <h1>Create a New Destination</h1>
 
 
 <div id="bgpic"><img style="width:100%" src="images/yell.jpg">
@@ -25,4 +25,63 @@ Your expereince ...</textarea>
 </form>
 
 <a href="/destinations">Back To Companies</a>
-</div>
+</div> --}}
+
+<main class="light-blue lighten-5">
+
+    <!-- user header banner -->
+    <div class="user-header">
+        <div class="user-shadow">
+            <div class="user-title">
+                <div class="header">
+                    <h4>{{user.name}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Retro Creation Form -->
+    <div class="container">
+        <div class="row">
+            <h2>Your Favourite Destination:</h2>
+            <form action="/{{user.username}}" method="POST" class="col s12 m12 l12">
+
+                <!-- Retro Title -->
+                <div class="input-field col s12 m12 l12">
+                    <label>Destination:</label>
+                    <input type="text" name="title">
+                </div>
+
+                <!-- Retro Decription -->
+                <div class="input-field col s12 m12 l12">
+                    <label>Description:</label>
+                    <textarea rows="8" cols="60" name="description" placeholder="Description" class="materialize-textarea">
+                    </textarea>
+                </div>
+
+                <!-- Retro Positive Notes -->
+                <div class="input-field col s12 m12 l6">
+                    <label>What went Right:</label>
+                    <textarea rows="8" cols="60" name="positiveNotes" placeholder="Positive Notes" class="materialize-textarea">
+                    </textarea>
+                </div>
+
+                <!-- Retro Negative Notes -->
+                <div class="input-field col s12 m12 l6">
+                    <label>What went Wrong:</label>
+                    <textarea rows="8" cols="60" name="negativeNotes" placeholder="Negative Notes" class="materialize-textarea">
+                    </textarea>
+                </div>
+
+                <!-- Retro Meeting Date -->
+                <div class="input-field col s12 m12 l12">
+                    <label>Travel Date:</label>
+                    <input type="date" name="travelDate" class="datepicker">
+                </div>
+                <div class="input-field col s12 m12 l12">
+                <input type="submit" value="Add Destination">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

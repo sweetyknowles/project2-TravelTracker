@@ -1,4 +1,4 @@
-<h1>Edit {{destination.name}}</h1>
+{{!-- <h1>Edit {{destination.name}}</h1>
 <form method="POST" action="/destinations/{{id}}?_method=PATCH">
   <div>
     <label for="name">Name of Destination</label>
@@ -12,4 +12,67 @@
   <button type="submit">Add destination</button>
 </form>
 
-<a href="/destinations/{{id}}">Back to {{destination.name}}</a>
+<a href="/destinations/{{id}}">Back to {{destination.name}}</a> --}}
+
+<main class="light-blue lighten-5">
+
+    <!-- user header banner -->
+    <div class="user-header">
+        <div class="user-shadow">
+            <div class="user-title">
+                <div class="header">
+                    <h4>{{user.name}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Update Retro Form -->
+    <div class="container">
+        <div class="row">
+            <h3>Update Destination:</h3>
+            <form action="/{{user.username}}/{{destination._id}}?_method=PUT" method="POST" class="col s12 m12 l12">
+
+                <!-- Retro Title -->
+                <div class="input-field col s12 m12 l12">
+                    <label>Destination:</label>
+                    <input type="text" name="title" value="{{destination.title}}">
+                </div>
+
+                <!-- Retro Decription -->
+                <div class="input-field col s12 m12 l12">
+                    <label>Description:</label>
+                    <textarea name="description" placeholder="Description" class="materialize-textarea">{{destination.description}}</textarea>
+                </div>
+
+                <!-- Retro Positive Notes -->
+                <div class="input-field col s12 m12 l6">
+                    <label>What Went Right:</label>
+                    <textarea name="positiveNotes" placeholder="Positive Notes" class="materialize-textarea">{{destination.positiveNotes}}</textarea>
+                </div>
+
+                <!-- Retro Negative Notes -->
+                <div class="input-field col s12 m12 l6">
+                    <label>What Went Wrong:</label>
+                    <textarea name="negativeNotes" placeholder="Negative Notes" class="materialize-textarea">{{destination.negativeNotes}}</textarea>
+                </div>
+
+                <!-- Retro Meeting Date -->
+                <div class="input-field col s12 m12 l12">
+                    <label>Travel Date:</label>
+                    <input type="date" name="travelDate" class="datepicker" value="{{meetDate}}">
+                </div>
+
+                <!-- Retro Complete Checkbox -->
+                <div class="col s12 m12 l12">
+                    <input class="filled-in" type="checkbox" id="completed" name="completed" value="true" {{#if destination.completed}}checked{{/if}}/>
+                    <label for="completed">Complete</label>
+                </div>
+                <div class="input-field col s12 m12 l12">
+                    <input type="submit" value="Update Destination">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

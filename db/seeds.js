@@ -1,5 +1,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
+//getting the models from the schema files
 const Profile = require('../models/profile')
 const Destination = require('../models/destination')
 
@@ -7,9 +8,13 @@ const Destination = require('../models/destination')
 
 mongoose.connect(process.env.MONGODB_URI)
 const db = mongoose.connection
+
+
+//will log connected with MongoDB
 db.on('open', () => {
     console.log('Successfully connected to mongoDB')
 })
+// will log an error if not connected to MongoDB
 db.on('error', (err) => {
     console.log(err)
 })
@@ -74,7 +79,7 @@ Destination.remove().then(() => {
 
     return Profile.remove()
 }).then(() => {
-    /// build out new sodas and companies
+    /// build out new profiles and destinations
     // and save them to the database
 
     return Profile.insertMany([Belgium, Rome, Texas,Italy])
