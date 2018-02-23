@@ -14,23 +14,23 @@ db.on('error', (err) => {
     console.log(err)
 })
 
-const italy = new Destination ({
+const Italy = new Destination ({
     name: "",
     location: '',
     image: ''
 })
 
-const belgium = new Destination ({
+const Belgium = new Destination ({
     name: "",
     location: '',
     image: ''
 })
-const rome = new Destination ({
+const Rome = new Destination ({
     name: "",
     location: '',
     image: ''
 })
-const texas = new Destination ({
+const Texas = new Destination ({
     name: "",
     location: '',
     image: ''
@@ -77,7 +77,7 @@ Destination.remove().then(() => {
     /// build out new sodas and companies
     // and save them to the database
 
-    return Profile.insertMany([user1, user2, user3,user4])
+    return Profile.insertMany([Belgium, Rome, Texas,Italy])
 }).then(() => {
     console.log('Saved succeffully')
     db.close()

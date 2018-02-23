@@ -8,3 +8,14 @@ body {
     color: #00B7FF;
   }
   
+  #headerpic {
+    height: 50%;
+
+  }
+  .wrap-contact3 {
+    width: 500px;
+    background: #80c64a;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 72px 55px 65px 55px;
+  }

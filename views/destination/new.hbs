@@ -1,15 +1,28 @@
 <h1>Create a New Destination</h1>
+
+
+<div id="bgpic"><img style="width:100%" src="images/yell.jpg">
+
 <form method="POST" action="/destinations">
   <div>
     <label for="name">Name of Destination</label>
     <input type="text" name="name">
   </div>
+  <br>
   <div>
-    <label for="location">Location</label>
+    <label for="famous spots">Favourtie Spots</label>
     <input type="text" name="location">
   </div>
-  
+  <br>
+  <div>
+
+    <textarea rows="4" cols="50" name="comment" form="usrform">
+Your expereince ...</textarea>
+
+  </div>
+
   <button type="submit">Add Destination</button>
 </form>
 
 <a href="/destinations">Back To Companies</a>
+</div>
