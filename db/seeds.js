@@ -19,55 +19,67 @@ db.on('error', (err) => {
     console.log(err)
 })
 
-const Italy = new Destination ({
-    name: "",
-    location: '',
-    image: ''
-})
-
-const Belgium = new Destination ({
-    name: "",
-    location: '',
-    image: ''
-})
-const Rome = new Destination ({
-    name: "",
-    location: '',
-    image: ''
-})
-const Texas = new Destination ({
-    name: "",
-    location: '',
-    image: ''
-})
-
-
 const user1 = new Profile({
     name: 'Larry',
     location: 'Los Angeles',
     phonenumber: 4448383845823,
-    photo: `"images/larry.jpg" alt="actor"`,
-    desinations: [italy]
+    photo: `"images/larry.jpg" alt="actor"`
+    
 })
 
 const user2 = new Profile({
     name: 'James',
     location: 'Chicago',
-    phonenumber: 884028402,
-    desinations: [texas, italy]
+    phonenumber: 884028402
+    
 })
 const user3 = new Profile({
     name: 'Zuriel',
     location: 'United Kingom',
-    phonenumber: 4470384738,
-    desinations: [rome]
+    phonenumber: 4470384738
 })
+
 const user4 = new Profile({
     name: 'sam',
     location: 'United Kingom',
-    phonenumber: 4470384738,
-    desinations: [belgium]
+    phonenumber: 4470384738
+    
 })
+
+
+const Italy = new Destination ({
+    name: "Italy",
+    photo: "images/yell.jpg",
+    description: "I love Italian beaches and food!",
+    negativeNotes: "Language barrier-- you should learn the basics",
+    profile: [user4]
+})
+
+const Belgium = new Destination ({
+    name: "Belgium",
+    photo: "images/yell.jpg",
+    description: " Belgium is like  delicious chocolate.",
+    negativeNotes: "None",
+    profile:[user3]
+
+})
+
+const Rome = new Destination ({
+    name: "Rome",
+    photo: "images/yell.jpg",
+    description: " Rome is ROme!.",
+    negativeNotes: "dress like a roman when in Rome",
+    profile:[user2]
+})
+const Texas = new Destination ({
+    
+    name: "Texas",
+    photo: "images/yell.jpg",
+    description: " EEEEHAAA!.",
+    negativeNotes: "visit in winter or be prepare to get fried with 100 degrees",
+    profile:[user1]
+})
+
 
 
 
@@ -82,7 +94,7 @@ Destination.remove().then(() => {
     /// build out new profiles and destinations
     // and save them to the database
 
-    return Profile.insertMany([Belgium, Rome, Texas,Italy])
+    return Destination.insertMany([Belgium, Rome, Texas,Italy])
 }).then(() => {
     console.log('Saved succeffully')
     db.close()

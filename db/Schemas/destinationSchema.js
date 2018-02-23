@@ -5,9 +5,10 @@ const Schema = mongoose.Schema
 
 const destinationSchema = new Schema({
   name: String,
-  location: Number,
-  phonenumber: Number, 
   photo: String,
+  description: String,
+  negativeNotes: String,
+
   
   profile: [ profileSchema ] // This sets up a one to many relationship
 })

@@ -42,9 +42,9 @@ router.post('/', (req, res) => {
     // THEN once we have the destination, take req.body and make a new Soda
     const newProfile = new Profile({
       name: req.body.name,
-      price: req.body.price,
-      packaging: req.body.packaging,
-      quantitySold: req.body.quantitySold
+      location: req.body.location,
+      phonenumber:req.body.phonenumber,
+      
     })
 
     // Push Profile to destination.Profiles

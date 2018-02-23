@@ -7,12 +7,16 @@ const Destination = require('../models/destination')
 router.get('/', (req, res) => {
 
   // Get All Destinations
-  Destination.find().then((destinations) => {
+  Destination.find()
+  .then((destinations) => {
+    console.log(destinations)
 
     // Send all the destinations to the hbs file called index in the views/destination directory
     res.render('destination/index', {
       destinations: destinations
     })
+  }).catch((err) => {
+    console.log(err)
   })
 })
 
@@ -42,6 +46,8 @@ router.post('/', (req, res) => {
     // THEN redirect to the new destinations page
     // Remember POST/PUT/PATCH/DELETE routes should not render or send anything
     res.redirect(`/destinations/${savedDestination._id}`)
+  }).catch((err) => {
+    console.log(err)
   })
 })
 
@@ -57,6 +63,8 @@ router.get('/:id', (req, res) => {
     res.render('destination/show', {
       destination: destination
     })
+  }).catch((err) => {
+    console.log(err)
   })
 })
 
@@ -72,6 +80,8 @@ router.get('/:id/edit', (req, res) => {
       id: req.params.id,
       destination: destination
     })
+  }).catch((err) => {
+    console.log(err)
   })
 })
 
@@ -89,6 +99,8 @@ router.patch('/:id', (req, res) => {
 
     // Redirect to the show page once it successfully updates
     res.redirect(`/destinations/${updatedDestination._id}`)
+  }).catch((err) => {
+    console.log(err)
   })
 })
 
@@ -99,6 +111,8 @@ router.delete('/:id', (req, res) => {
   // Use the params id to find and remove the Destination
   Destination.findByIdAndRemove(req.params.id).then(() => {
     res.redirect(`/destinations`)
+  }).catch((err) => {
+    console.log(err)
   })
 })
 
