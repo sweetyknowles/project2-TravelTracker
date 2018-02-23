@@ -6,9 +6,9 @@
     <li>{{name}}</li>
   {{/each}}
 </ul>
-<a href="/destinations/{{destination._id}}/profile">Go To Profile Page</a>
+<a href="/destinations/{{destinationId}}/profile">Go To Profile Page</a>
 <br>
-<a href="/destinations/{{destination._id}}/edit">Edit {{destination.name}}</a>
+<a href="/destinations/{{destinationId}}/edit">Edit {{destination.name}}</a>
 
 <form action="/destinations/{{destination.id}}?_method=DELETE" method="post">
   <button type="submit">Delete {{destaintion.name}}</button>

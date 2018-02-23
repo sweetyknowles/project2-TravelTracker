@@ -11,14 +11,17 @@ const Profile = require('../models/profile')
 router.get('/', (req, res) => {
 
   // Find the destinationby route params defined in app.js
-  Destination.findById(req.params.Id).then((destinations) => {
-
-    // Pass all sodas and the company to a view specifically for showing all sodas
-    const profiles = destination.profiles
+  Destination.findById(req.params.destinationId).then((destination) => {
+    
+    // Pass all profiles and the destinations to a view specifically for showing all destinations
+    const profiles = destination.profile
+    console.log(profiles)
     res.render('profile/index', {
       destination: destination,
       profiles: profiles
     })
+  }).catch((err) => {
+    console.log(err)
   })
 })
 
@@ -36,15 +39,13 @@ router.get('/new', (req, res) => {
 // POST
 router.post('/', (req, res) => {
 
-  // Get destination we need to save soda to
+  // Get destination we need to save profile to
   Destination.findById(req.params.destinationId).then((destination) => {
 
-    // THEN once we have the destination, take req.body and make a new Soda
+    // THEN once we have the destination, take req.body and make a new profile
     const newProfile = new Profile({
-      name: req.body.name,
-      location: req.body.location,
-      phonenumber:req.body.phonenumber,
-      
+      destination: destination,
+      profiles: profiles
     })
 
     // Push Profile to destination.Profiles
@@ -54,7 +55,7 @@ router.post('/', (req, res) => {
     return destination.save()
   }).then((updatedDestination) => {
 
-    // Redirect to all sodas
+    // Redirect to all profiles
     res.redirect(`/destinations/${req.params.destinationId}/profiles`)
   })
 })

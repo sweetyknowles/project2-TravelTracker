@@ -61,6 +61,7 @@ router.get('/:id', (req, res) => {
 
     // THEN render that into a handlebars view and pass the destination from our db into hbs
     res.render('destination/show', {
+      destinationId: req.params.id,
       destination: destination
     })
   }).catch((err) => {
