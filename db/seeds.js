@@ -1,7 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-const Profile = require('../models/destination')
-const Destination = require('../models/profile')
+const Profile = require('../models/profile')
+const Destination = require('../models/destination')
 
 // separate from the server
 

@@ -1,24 +1,15 @@
-<h1>Create a New Profile</h1>
-<form method="POST" action="/destinations/{{destinationId}}/profiles">
+<h1>Create a New Destination</h1>
+<form method="POST" action="/destinations">
   <div>
-    <label for="name">Profile</label>
+    <label for="name">Name of Destination</label>
     <input type="text" name="name">
   </div>
   <div>
     <label for="location">Location</label>
     <input type="text" name="location">
   </div>
-  <div>
-    <label for="destination">Destination</label>
-    <select name="destination">
-      <option value="can">Can</option>
-      <option value="bottle">Bottle</option>
-    </select>
-  </div>
-  {{!-- <div>
-    <label for="quantitySold">Quantity Sold</label>
-    <input type="text" name="quantitySold">
-  </div> --}}
   
   <button type="submit">Add Destination</button>
 </form>
+
+<a href="/destinations">Back To Companies</a>

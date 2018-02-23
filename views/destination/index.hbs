@@ -1,10 +1,66 @@
-<h1>{{destination.name}}'s Profile</h1>
+<!DOCTYPE html>
+<html>
 
-{{#each profiles}}
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
+
+<body>
   <div>
-    <a href="/destinations/{{../destinations._id}}/profiles/{{_id}}">{{name}}</a>
+  <header>
+<div id="headerpic"><img style="width:100%" src="images/map.gif"></div>
+  </header>
   </div>
-{{/each}}
+  <div class="container">
+    <body>
+   
+    <h1> Travel Tracker</h1>
+    <h2>Travel is a Passionate Hobby!</h2>
+    <div>
+      <p>If we could all have it our way, we would travel perhaps every 2 months.
+        <br> Which brings us to the question how do we track our travelled destinations and a LONGGG!! Wish Lish Destinations
+        to be yet explored.
 
-<a href="/destinations/{{destination._id}}/profile/new">New Profile</a>
-<a href="/destinations/{{destination._id}}">Back To Destination Page</a>
+        <br>
+        check out some of our members favourte spots been to and wish to be at! 
+      </p>
+
+
+      <ul>
+        {{#each destinations}}
+        <li>
+          <a href="/destinations/{{_id}}">
+          
+          <div>
+            {{name}}
+            {{location}}
+            </div>
+          </a>
+        </li>
+        <img src="{{Photo}}">
+        {{/each}}
+      </ul>
+
+      <a href="/destinations/new">New Destinations</a>
+    </div>
+  </div>
+  </div>
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>

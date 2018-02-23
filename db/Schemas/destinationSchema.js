@@ -1,13 +1,15 @@
 const mongoose = require('mongoose')
+const profileSchema = require('./profileSchema')
 const Schema = mongoose.Schema
 
 
-const profileSchema = new Schema({
+const destinationSchema = new Schema({
   name: String,
   location: Number,
   phonenumber: Number, 
   photo: String,
   
+  profile: [ profileSchema ] // This sets up a one to many relationship
 })
 
-module.exports = profileSchema
+module.exports = destinationSchema
