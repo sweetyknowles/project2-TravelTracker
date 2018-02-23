@@ -57,7 +57,7 @@ const Italy = new Destination ({
 
 const Belgium = new Destination ({
     name: "Belgium",
-    photo: "images/yell.jpg",
+    photo: "images/belgium-flag.gif",
     description: " Belgium is like  delicious chocolate.",
     negativeNotes: "None",
     profile:[user3]
