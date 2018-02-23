@@ -1,17 +1,11 @@
-<h1>{{destination.name}}</h1>
+<h1>{{profile.name}}</h1>
 
-<h3>{{destination.location}}</h3>
-<ul>
-  {{#each destination.profile}}
-    <li>{{name}}</li>
-  {{/each}}
-</ul>
-<a href="/destinations/{{destination._id}}/profile">Go To Profile Page</a>
-<br>
-<a href="/destinations/{{destination._id}}/edit">Edit {{destination.name}}</a>
+<p>{{profile.location}}</p>
+<p>{{profile.destinations}}</p>
+<p>{{profile.quantitySold}}</p>
 
-<form action="/destinations/{{destination.id}}?_method=DELETE" method="post">
-  <button type="submit">Delete {{destaintion.name}}</button>
+<a href="/destinations/{{destiantionId}}/profiles/{{profile._id}}/edit">Edit {{profile.name}}</a>
+
+<form method="POST" action="/destinations/{{destinationId}}/profile/{{profile._id}}?_method=DELETE">
+  <button type="submit">Delete This Profile</button>
 </form>
-
-<a href="/destinations">Back To All Destinations</a>

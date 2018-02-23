@@ -1,15 +1,27 @@
-<h1>Edit {{destination.name}}</h1>
-<form method="POST" action="/destinations/{{id}}?_method=PATCH">
-  <div>
-    <label for="name">Name of Destination</label>
-    <input type="text" name="name" value="{{destination.name}}">
+<h1>Edit Profile</h1>
+<form method="POST" action="/destinations/{{destinationId}}/profiles/{{profile._id}}?_method=PATCH">
+ <div>
+    <label for="name">Profile</label>
+    <input type="text" name="name" value="{{profile.name}}">
   </div>
   <div>
-    <label for="location">Location</label>
-    <input type="text" name="location" value="{{destination.location}}">
+    <label for="location">location</label>
+    <input type="text" name="location" value="{{profile.location}}">
   </div>
+  <div>
+    <label for="destinations">Desinations</label>
+    <select name="destinations" selected="{{profile.destinations}}">
+      <option value="can">Can</option>
+      <option value="bottle">Bottle</option>
+    </select>
+  </div>
+  {{!-- <div>
+    <label for="quantitySold">Quantity Sold</label>
+    <input type="text" name="quantitySold" value="{{soda.quantitySold}}">
+  </div> --}}
   
-  <button type="submit">Add destination</button>
-</form>
+  <button type="submit">Edit Profile</button>
+  
 
-<a href="/destinations/{{id}}">Back to {{destination.name}}</a>
+</form>
+<a href="/destinations/{{destinationId}}/profiles/{{._id}}">Go Back</a>

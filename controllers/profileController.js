@@ -1,17 +1,22 @@
 const express = require('express')
-const router = express.Router()
-const Profile= require('../models/profile')
 
-// INDEX
-// GET
+// IMPORTANT: make sure to add merge params
+const router = express.Router({ mergeParams: true })
+
+
+const Destination = require('../models/destination')
+const Profile = require('../models/profile')
+
+/* GET home page. */
 router.get('/', (req, res) => {
 
-  // Get All Companies
-  Profile.find().then((profiles) => {
-    console.log(profiles)
+  // Find the company by route params defined in app.js
+  Destination.findById(req.params.Id).then((destination) => {
 
-    // Send all the companies to the hbs file called index in the views/company directory
+    // Pass all sodas and the company to a view specifically for showing all sodas
+    const profiles = destination.profiles
     res.render('profile/index', {
+      destination: destination,
       profiles: profiles
     })
   })
@@ -21,42 +26,53 @@ router.get('/', (req, res) => {
 // GET
 router.get('/new', (req, res) => {
 
-  // Just render a view, we don't need to inject any data from our server here
-  res.render('profile/new')
+  // We only need to pass the destination ID to this new view
+  res.render('profile/new', {
+    destinationId: req.params.destinationId
+  })
 })
 
 // CREATE
 // POST
 router.post('/', (req, res) => {
 
-  // Create a new company and make sure we are ONLY looking at the 
-  // pieces of req.body that we need in order to save to the DB
-  // Data from req.body is coming from the HTML form
-  const newProfile = new Profile({
-    name: req.body.name,
-    location: req.body.location
-  })
+  // Get destination we need to save soda to
+  Destination.findById(req.params.destinationId).then((destination) => {
 
-  // Save the new company
-  newProfile.save().then((savedProfile) => {
+    // THEN once we have the destination, take req.body and make a new Soda
+    const newProfile = new Profile({
+      name: req.body.name,
+      price: req.body.price,
+      packaging: req.body.packaging,
+      quantitySold: req.body.quantitySold
+    })
 
-    // THEN redirect to the new companies page
-    // Remember POST/PUT/PATCH/DELETE routes should not render or send anything
-    res.redirect(`/profiles/${savedProfile._id}`)
+    // Push Profile to destination.Profiles
+    destination.profiles.push(newSoda)
+
+    // Save destination
+    return destination.save()
+  }).then((updatedCompany) => {
+
+    // Redirect to all sodas
+    res.redirect(`/companies/${req.params.companyId}/sodas`)
   })
 })
 
 
 // SHOW
-// GET
 router.get('/:id', (req, res) => {
 
-  // Find a single company
-  Profile.findById(req.params.id).then((profile) => {
+  // Find company from companyId route param
+  Company.findById(req.params.companyId).then((company) => {
 
-    // THEN render that into a handlebars view and pass the company from our db into hbs
-    res.render('profile/show', {
-     profile: profile
+    // Use the .id method to extract a single soda from company.sodas
+    const soda = company.sodas.id(req.params.id)
+
+    // connect it to a soda/show view
+    res.render('soda/show', {
+      companyId: req.params.companyId,
+      soda: soda
     })
   })
 })
@@ -65,13 +81,13 @@ router.get('/:id', (req, res) => {
 // GET
 router.get('/:id/edit', (req, res) => {
 
-  // Find a single company using the route params above
- Profile.findById(req.params.id).then((profile) => {
-
-    // THEN render that and id into a handlebars view and pass the company from our db into hbs
-    res.render('profile/edit', {
-      id: req.params.id,
-      profile: profile
+  // Make sure to take a look at the soda/edit file. It will show you a lot concerning how 
+  // to connect the initial values to this edit page
+  Company.findById(req.params.companyId).then((company) => {
+    const soda = company.sodas.id(req.params.id)
+    res.render('soda/edit', {
+      companyId: req.params.companyId,
+      soda: soda
     })
   })
 })
@@ -79,27 +95,32 @@ router.get('/:id/edit', (req, res) => {
 // UPDATE
 // PUT/PATCH
 router.patch('/:id', (req, res) => {
+  Company.findById(req.params.companyId).then((company) => {
 
-  // Use the route params and form data to update the Company
-  Profile.findByIdAndUpdate(req.params.id, {
-    name: req.body.name,
-    location: req.body.location
+    // We don't have a nice method like findByIdAndUpdate here
+    // so instead we need to manually change the sodas values
+    const soda = company.sodas.id(req.params.id)
+    soda.name = req.body.name
+    soda.price = req.body.price
+    soda.packaging = req.body.packaging
+    soda.quantitySold = req.body.quantitySold
 
-    // Make sure you add thie { new: true } flag, else your data may not refresh right away
-  }, { new: true }).then((updatedProfile) => {
-
-    // Redirect to the show page once it successfully updates
-    res.redirect(`/profiles/${updatedProfile._id}`)
+    // Then Save the company
+    return company.save()
+  }).then((updatedCompany) => {
+    res.redirect(`/companies/${updatedCompany._id}/sodas/${req.params.id}`)
   })
 })
 
 // DESTROY
 // DELETE
 router.delete('/:id', (req, res) => {
-
-  // Use the params id to find and remove the Company
-  Profile.findByIdAndRemove(req.params.id).then(() => {
-    res.redirect(`/profiles`)
+  Company.findById(req.params.companyId).then((company) => {
+    const soda = company.sodas.id(req.params.id)
+    soda.remove()
+    return company.save()
+  }).then(() => {
+    res.redirect(`/companies/${req.params.companyId}/sodas`)
   })
 })
 
