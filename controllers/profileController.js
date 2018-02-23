@@ -10,7 +10,7 @@ const Profile = require('../models/profile')
 /* GET home page. */
 router.get('/', (req, res) => {
 
-  // Find the company by route params defined in app.js
+  // Find the destinationby route params defined in app.js
   Destination.findById(req.params.Id).then((destination) => {
 
     // Pass all sodas and the company to a view specifically for showing all sodas
@@ -48,14 +48,14 @@ router.post('/', (req, res) => {
     })
 
     // Push Profile to destination.Profiles
-    destination.profiles.push(newSoda)
+    destination.profiles.push(newProfile)
 
     // Save destination
     return destination.save()
-  }).then((updatedCompany) => {
+  }).then((updatedDestination) => {
 
     // Redirect to all sodas
-    res.redirect(`/companies/${req.params.companyId}/sodas`)
+    res.redirect(`/destinations/${req.params.destinationId}/profiles`)
   })
 })
 
@@ -63,16 +63,16 @@ router.post('/', (req, res) => {
 // SHOW
 router.get('/:id', (req, res) => {
 
-  // Find company from companyId route param
-  Company.findById(req.params.companyId).then((company) => {
+  // Find destinationfrom destination route param
+  Destination.findById(req.params.destinationId).then((destination) => {
 
-    // Use the .id method to extract a single soda from company.sodas
-    const soda = company.sodas.id(req.params.id)
+    // Use the .id method to extract a single profile from destination.profile
+    const profile = destination.profiles.id(req.params.id)
 
-    // connect it to a soda/show view
-    res.render('soda/show', {
-      companyId: req.params.companyId,
-      soda: soda
+    // connect it to a profile/show view
+    res.render('profile/show', {
+      destinationId: req.params.destinationId,
+      profile: profile
     })
   })
 })
@@ -81,13 +81,13 @@ router.get('/:id', (req, res) => {
 // GET
 router.get('/:id/edit', (req, res) => {
 
-  // Make sure to take a look at the soda/edit file. It will show you a lot concerning how 
+  // Make sure to take a look at the profile/edit file. It will show you a lot concerning how 
   // to connect the initial values to this edit page
-  Company.findById(req.params.companyId).then((company) => {
-    const soda = company.sodas.id(req.params.id)
+  Destination.findById(req.params.destinationyId).then((destinationy) => {
+    const soda = destinationy.sodas.id(req.params.id)
     res.render('soda/edit', {
-      companyId: req.params.companyId,
-      soda: soda
+      destinationyId: req.params.destinationyId,
+      profile: profile
     })
   })
 })
@@ -95,32 +95,32 @@ router.get('/:id/edit', (req, res) => {
 // UPDATE
 // PUT/PATCH
 router.patch('/:id', (req, res) => {
-  Company.findById(req.params.companyId).then((company) => {
+  Destination.findById(req.params.destinationId).then((destination) => {
 
     // We don't have a nice method like findByIdAndUpdate here
-    // so instead we need to manually change the sodas values
-    const soda = company.sodas.id(req.params.id)
-    soda.name = req.body.name
-    soda.price = req.body.price
-    soda.packaging = req.body.packaging
-    soda.quantitySold = req.body.quantitySold
+    // so instead we need to manually change the profiles values
+    const profile = destination.profiles.id(req.params.id)
+    profile.name = req.body.name
+    profile.price = req.body.price
+    profile.packaging = req.body.packaging
+    profile.quantitySold = req.body.quantitySold
 
-    // Then Save the company
-    return company.save()
-  }).then((updatedCompany) => {
-    res.redirect(`/companies/${updatedCompany._id}/sodas/${req.params.id}`)
+    // Then Save the destination
+    return destinationy.save()
+  }).then((updatedDestination) => {
+    res.redirect(`/destination/${updatedDestination._id}/profiles/${req.params.id}`)
   })
 })
 
 // DESTROY
 // DELETE
 router.delete('/:id', (req, res) => {
-  Company.findById(req.params.companyId).then((company) => {
-    const soda = company.sodas.id(req.params.id)
+  Destination.findById(req.params.destinationId).then((destination) => {
+    const soda = destination.profiles.id(req.params.id)
     soda.remove()
-    return company.save()
+    return destination.save()
   }).then(() => {
-    res.redirect(`/companies/${req.params.companyId}/sodas`)
+    res.redirect(`/destination/${req.params.destinationId}/profiles`)
   })
 })
 
