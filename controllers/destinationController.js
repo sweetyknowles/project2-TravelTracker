@@ -7,7 +7,7 @@ const Destination = require('../models/destination')
 router.get('/', (req, res) => {
 
   // Get All Destinations
-  Destination.find().then((companies) => {
+  Destination.find().then((destinations) => {
 
     // Send all the destinations to the hbs file called index in the views/destination directory
     res.render('destination/index', {

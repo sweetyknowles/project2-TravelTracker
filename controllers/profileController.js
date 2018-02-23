@@ -11,7 +11,7 @@ const Profile = require('../models/profile')
 router.get('/', (req, res) => {
 
   // Find the destinationby route params defined in app.js
-  Destination.findById(req.params.Id).then((destination) => {
+  Destination.findById(req.params.Id).then((destinations) => {
 
     // Pass all sodas and the company to a view specifically for showing all sodas
     const profiles = destination.profiles
