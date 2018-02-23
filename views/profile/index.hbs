@@ -1,4 +1,4 @@
-<h1>{{profiles.name}} Memeber Profiles</h1>
+<h1>{{profiles.name}} Member Profiles</h1>
 
 {{#each profiles}}
   <div>
@@ -7,11 +7,12 @@
 {{/each}}
 
 <a href="/destinations/{{destination._id}}/profile/new">New Profile</a>
-<a href="/destinations/{{destination._id}}">Back To Destination Page</a>
+<br></br>
+<a href="/destinations/{{destination._id}}">Back To Destination</a>
 
 
-<h1>{{profile.name}}'s Profiles</h1>
-
+{{!-- <h1>{{name}}'s Profiles</h1> --}}
+<br></br>
 {{#each profiles}}
   <div>
     <a href="/destinations/{{../destination._id}}/profiles/{{_id}}">{{name}}</a>

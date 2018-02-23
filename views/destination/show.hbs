@@ -3,15 +3,30 @@
 <h3>{{destination.location}}</h3>
 <ul>
   {{#each destination.profile}}
-    <li>{{name}}</li>
+    <div>
+      <li>{{profile.name}}</li>
+    <a href="/destinations/{{destinations._id}}/profiles/{{_id}}">{{name}}</a>
+  </div>
+  <br>
+\
   {{/each}}
 </ul>
 <a href="/destinations/{{destinationId}}/profile">Go To Profile Page</a>
+
+<div>
+    <a href="/destinations/{{destinations._id}}/profiles/{{_id}}">{{name}}</a>
+  </div>
+{{!-- //<div><img src="{{destination.photo}}"/></div> --}}
+<div>
+<img src ="https://www.transat.com/getmedia/4989cae8-bad4-41be-911f-47543ac444a2/Belgium-WithFriends-1000x604.jpg.aspx"/>
+</div>
 <br>
+
 <a href="/destinations/{{destinationId}}/edit">Edit {{destination.name}}</a>
+<br></br>
 
 <form action="/destinations/{{destination.id}}?_method=DELETE" method="post">
   <button type="submit">Delete {{destaintion.name}}</button>
 </form>
-
-<a href="/destinations">Back To All Destinations</a>
+<br></br>
+<a href="/destinations">All Destinations</a>
