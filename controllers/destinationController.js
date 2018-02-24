@@ -56,7 +56,7 @@ router.post('/', (req, res) => {
 // GET
 router.get('/:id', (req, res) => {
 
-  // Find a single company
+  // Find a single destination
   Destination.findById(req.params.id).then((destination) => {
 
     // THEN render that into a handlebars view and pass the destination from our db into hbs
@@ -95,7 +95,7 @@ router.patch('/:id', (req, res) => {
     name: req.body.name,
     location: req.body.location
 
-    // Make sure you add thie { new: true } flag, else your data may not refresh right away
+    // Make sure you add the { new: true } flag, else your data may not refresh right away
   }, { new: true }).then((updatedDestination) => {
 
     // Redirect to the show page once it successfully updates
