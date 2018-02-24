@@ -23,50 +23,52 @@ const user1 = new Profile({
     name: 'Larry',
     location: 'Los Angeles',
     phonenumber: 4448383845823,
-    photo: `"images/larry.jpg" alt="actor"`
+    photo: "/images/larry.jpg"
     
 })
 
 const user2 = new Profile({
     name: 'James',
     location: 'Chicago',
-    phonenumber: 884028402
+    phonenumber: 884028402,
+    photo: "/images/larry.jpg"
     
 })
 const user3 = new Profile({
     name: 'Zuriel',
     location: 'United Kingom',
-    phonenumber: 4470384738
+    phonenumber: 4470384738,
+    photo: "/images/larry.jpg"
 })
 
 const user4 = new Profile({
     name: 'sam',
     location: 'United Kingom',
-    phonenumber: 4470384738
-    
+    phonenumber: 4470384738,
+    photo: "/images/larry.jpg"
 })
 
 
 const Italy = new Destination ({
     name: "Italy",
-    photo: "images/yell.jpg",
+    photo: "/images/venice.jpg",
     description: "I love Italian beaches and food!",
     negativeNotes: "Language barrier-- you should learn the basics",
-    profile: [user4]
+    profile: [user4, user2]
 })
 
 const Belgium = new Destination ({
     name: "Belgium",
-    photo: "images/belgia.jpg",
+    photo: "/images/belgia.jpg",
     description: " Belgium is like  delicious chocolate.",
     negativeNotes: "None",
-    profile:[user3]
+    profile:[user3, user1]
 
 })
 
 const Rome = new Destination ({
     name: "Rome",
-    photo: "images/yell.jpg",
+    photo: "images/rome3.jpg",
     description: " Rome is ROme!.",
     negativeNotes: "dress like a roman when in Rome",
     profile:[user2]
@@ -74,7 +76,7 @@ const Rome = new Destination ({
 const Texas = new Destination ({
     
     name: "Texas",
-    photo: "images/yell.jpg",
+    photo: "images/texas2.jpg",
     description: " EEEEHAAA!.",
     negativeNotes: "visit in winter or be prepare to get fried with 100 degrees",
     profile:[user1]

@@ -1,28 +1,38 @@
+
 <h1>{{destination.name}}</h1>
 
 <h3>{{destination.location}}</h3>
 <ul>
+
+  <a href="/destinations/{{destinationId}}/profile">Member's Review of Belgium</a>
+<br></br>
   {{#each destination.profile}}
     <div>
       <li>{{profile.name}}</li>
     <a href="/destinations/{{destinations._id}}/profiles/{{_id}}">{{name}}</a>
   </div>
   <br>
-\
+
   {{/each}}
 </ul>
-<a href="/destinations/{{destinationId}}/profile">Go To Profile Page</a>
+<a href="/destinations/{{destinationId}}/profile">Member's Review of Belgium</a>
+<br></br>
 
 <div>
     <a href="/destinations/{{destinations._id}}/profiles/{{_id}}">{{name}}</a>
   </div>
 {{!-- //<div><img src="{{destination.photo}}"/></div> --}}
-<div>
-<img src ="https://www.transat.com/getmedia/4989cae8-bad4-41be-911f-47543ac444a2/Belgium-WithFriends-1000x604.jpg.aspx"/>
-</div>
+
+
+<img id ="belgium" src ="https://www.transat.com/getmedia/4989cae8-bad4-41be-911f-47543ac444a2/Belgium-WithFriends-1000x604.jpg.aspx"/>
+
 <br>
 
+
+
+<div>
 <a href="/destinations/{{destinationId}}/edit">Edit {{destination.name}}</a>
+</div>
 <br></br>
 
 <form action="/destinations/{{destination.id}}?_method=DELETE" method="post">

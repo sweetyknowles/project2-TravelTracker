@@ -1,0 +1,56 @@
+
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: blue;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#top1 {
+  text-align: center;
+  color: greenyellow;
+  font-family: cursive;
+  
+}
+
+#top2 {
+  text-align: center;
+  color: greenyellow
+}
+#top3 {
+  text-align: center;
+  color: greenyellow;
+  font-family: cursive;
+  
+}
+#para {
+  text-align: justify;
+  font-family:cursive;
+  font-size: 16px;
+  color: greenyellow;
+  font-weight:bold;
+
+}
+.photostyle{
+height:400px;
+width:1000px;
+align:center;
+
+}
+li{
+  font-size: 50px; 
+}
+.photostylepro{
+  height:300px;
+  width:200px;
+}
+#belgium{
+height:200px;
+width:auto;
+align:center;
+}
+  

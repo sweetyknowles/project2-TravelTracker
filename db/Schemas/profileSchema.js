@@ -5,7 +5,8 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   location: String,
-  image: String
+  phonenumber:Number,
+  photo: String
   
 
 })

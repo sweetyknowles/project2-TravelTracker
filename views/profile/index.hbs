@@ -1,23 +1,29 @@
-<h1>{{profiles.name}} Member Profiles</h1>
+<h1>{{profile.name}} Member Profiles</h1>
 
 {{#each profiles}}
-  <div>
-    <a href="/destinations/{{../destinations._id}}/profiles/{{_id}}">{{name}}</a>
-  </div>
+<div>
+  <a href="/destinations/{{../destinations._id}}/profiles/{{_id}}">{{name}}</a>
+  <br>
+  <a href="/destinations/{{../destinations._id}}/profiles/{{_id}}">{{location}}</a>
+  <br></br>
+  <a href="/destinations/{{../destinations._id}}/profiles/{{_id}}">{{phonenumber}}</a>
+  <br>
+  <br>
+  <img class="photostylepro" src="{{photo}}">
+</div>
 {{/each}}
 
 <a href="/destinations/{{destination._id}}/profile/new">New Profile</a>
 <br></br>
-<a href="/destinations/{{destination._id}}">Back To Destination</a>
-
-
-{{!-- <h1>{{name}}'s Profiles</h1> --}}
+{{!--
+<a href="/destinations/{{destination._id}}">Back To Destination</a> --}} {{!--
+<h1>{{name}}'s Profiles</h1> --}}
 <br></br>
-{{#each profiles}}
-  <div>
-    <a href="/destinations/{{../destination._id}}/profiles/{{_id}}">{{name}}</a>
-  </div>
-{{/each}}
+{{#each profiles}} {{!--
+<div>
+  <a href="/destinations/{{../destination._id}}/profiles/{{_id}}">{{name}}</a>
+</div> --}} {{/each}}
 
-<a href="/destinations/{{destination._id}}/profiles/new">New Profile</a>
-<a href="/destinations/{{destination._id}}">Back To Destination</a>
+
+<br></br>
+<a href="/destinations/{{destination._id}}">All Destination</a>

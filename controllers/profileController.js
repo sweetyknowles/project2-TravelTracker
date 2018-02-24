@@ -86,7 +86,7 @@ router.get('/:id/edit', (req, res) => {
   // to connect the initial values to this edit page
   Destination.findById(req.params.destinationyId).then((destinationy) => {
     const soda = destinationy.sodas.id(req.params.id)
-    res.render('soda/edit', {
+    res.render('profile/edit', {
       destinationyId: req.params.destinationyId,
       profile: profile
     })

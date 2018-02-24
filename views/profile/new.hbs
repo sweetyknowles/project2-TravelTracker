@@ -1,5 +1,7 @@
 <h1>Create a New Profile</h1>
-<form method="POST" action="/destinations/{{destinationId}}/profiles">
+
+
+{{!-- <form method="POST" action="/destinations/{{destinationId}}/profiles">
   <div>
     <label for="name">Profile</label>
     <input type="text" name="name">
@@ -22,4 +24,28 @@
   
   
   <button type="submit">Add Destination</button>
+</form> --}}
+
+
+<form method="POST" action="/destinations">
+  <div>
+    <label for="name"> Destination</label>
+    <input type="text" name="name">
+  </div>
+  <br>
+  <div>
+    <label for="description">Description</label>
+    <input type="text" name="description">
+  </div>
+  <br>
+  <div>
+
+    <textarea rows="4" cols="50" name="comment" form="usrform">
+Your expereince ...</textarea>
+
+
+  <button type="submit">Add Profile</button>
 </form>
+<BR></br>
+<a href="/destinations"> All Destinations</a>
+</div> 
