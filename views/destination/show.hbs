@@ -1,37 +1,71 @@
+<div id="exp">
+<h1>
+  {{destination.name}}</h1>
+<h4>{{destination.description}}</h4>
+{{!--
+<div id="bel">
+  <img src="{{destination.photo}}" />
+</div> --}}
 
-<h1>{{destination.name}}</h1>
+  <p>Experience:{{destination.negativeNotes}}</p>
+</div>
+<br>
 
-<h3>{{destination.location}}</h3>
+
+<ul class="facts">
+  <li>1. The Big Bang theory originated in Belgium – it was a Belgian, the priest and physicist (apparently not a contradiction
+    in terms) Georges Lemaitre, who first came up with what is now called the Big Bang theory of the origin of the universe
+    in 1927. The theory is often attributed to Edwin Hubble, although records show Lemaitre published a similar theory two
+    years before Hubble.</li>
+
+  <li>2. Brussels South Charleroi Airport is the most punctual airport in Europe – and it is ranked as the world's second best
+    airport for on-time performance, just behind Japan's Osaka International, in OAG's punctuality report.</li>
+
+  <li>3. Cricket is thought to be a Belgian invention, not British – academics believe immigrants from north Belgium could have
+    imported the game to Britain, based on a poem thought to have been written in 1533 that calls Flemish weavers ‘king of
+    crekettes’ and also mentions ‘wickettes’, predating English references dating to the 1600s.</li>
+
+  <li>4. Belgian men are the second tallest in the world – with a height of 181.7cm, only Dutchmen are taller at 182.5cm. The
+    same can't be said for Belgian women, however, who rank 21 at 165.5cm tall.</li>
+
+  <li>5. The highest point in Belgium is lower than the world's tallest building – the Signal de Botrange on the High Fens plateau
+    in far-east Belgium is the highest point at 694m, shorter than the world's tallest building in Dubai, the Burj Khalifa
+    at 828m. Belgium along with the Netherlands and Luxembourg are historically known as the Low Countries.</li>
+</ul>
+
+
+
 <ul>
 
   <a href="/destinations/{{destinationId}}/profile">Member's Review of Belgium</a>
-<br></br>
+  <br></br>
   {{#each destination.profile}}
-    <div>
-      <li>{{profile.name}}</li>
+  <div>
+    <li>{{profile.name}}</li>
     <a href="/destinations/{{destinations._id}}/profile/{{_id}}">{{name}}</a>
   </div>
-  <br>
-
-  {{/each}}
+  <br> {{/each}}
 </ul>
+
 
 <br></br>
 
 <div>
-    <a href="/destinations/{{destinations._id}}/profiles/{{_id}}">{{name}}</a>
-  </div>
-{{!-- //<div><img src="{{destination.photo}}"/></div> --}}
+  <a href="/destinations/{{destinations._id}}/profiles/{{_id}}">{{name}}</a>
+</div>
 
 
-<img id ="belgium" src ="https://www.transat.com/getmedia/4989cae8-bad4-41be-911f-47543ac444a2/Belgium-WithFriends-1000x604.jpg.aspx"/>
-
+<img id="belgium1" src="https://www.transat.com/getmedia/4989cae8-bad4-41be-911f-47543ac444a2/Belgium-WithFriends-1000x604.jpg.aspx"
+/>
+<img id="belgium1" src="http://www.nationsonline.org/gallery/Belgium/Canal-du-Centre-Ascenseur.jpg" />
+<img id="belgium1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS70mZpGGXp2g6dlYLYZcz0j0ujmMu9BxwbQbe-Y3skuxvhPWYk"
+/>
 <br>
 
 
 
 <div>
-<a href="/destinations/{{destinationId}}/edit">Edit {{destination.name}}</a>
+  <a href="/destinations/{{destinationId}}/edit">Edit {{destination.name}}</a>
 </div>
 <br></br>
 
@@ -40,6 +74,3 @@
 </form>
 <br></br>
 <a href="/destinations">All Destinations</a>
-
-
-

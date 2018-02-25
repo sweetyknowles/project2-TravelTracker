@@ -85,7 +85,7 @@ router.get('/:id/edit', (req, res) => {
   // Make sure to take a look at the profile/edit file. It will show you a lot concerning how 
   // to connect the initial values to this edit page
   Destination.findById(req.params.destinationyId).then((destinationy) => {
-    const soda = destinationy.sodas.id(req.params.id)
+    const profile = destinationy.profiles.id(req.params.id)
     res.render('profile/edit', {
       destinationyId: req.params.destinationyId,
       profile: profile
@@ -102,9 +102,9 @@ router.patch('/:id', (req, res) => {
     // so instead we need to manually change the profiles values
     const profile = destination.profiles.id(req.params.id)
     profile.name = req.body.name
-    profile.price = req.body.price
-    profile.packaging = req.body.packaging
-    profile.quantitySold = req.body.quantitySold
+    profile.location = req.body.location
+    profile.phonenumber = req.body.phonenumber
+    profile.photo = req.body.photo
 
     // Then Save the destination
     return destinationy.save()
@@ -117,8 +117,8 @@ router.patch('/:id', (req, res) => {
 // DELETE
 router.delete('/:id', (req, res) => {
   Destination.findById(req.params.destinationId).then((destination) => {
-    const soda = destination.profiles.id(req.params.id)
-    soda.remove()
+    const profile = destination.profiles.id(req.params.id)
+    .remove()
     return destination.save()
   }).then(() => {
     res.redirect(`/destination/${req.params.destinationId}/profiles`)

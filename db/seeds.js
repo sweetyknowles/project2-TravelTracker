@@ -53,15 +53,15 @@ const Italy = new Destination ({
     name: "Italy",
     photo: "/images/venice.jpg",
     description: "I love Italian beaches and food!",
-    negativeNotes: "Language barrier-- you should learn the basics",
+    negativeNotes: "Language barrier!you should learn the basics",
     profile: [user4, user2]
 })
 
 const Belgium = new Destination ({
     name: "Belgium",
     photo: "/images/belgia.jpg",
-    description: " Belgium is like  delicious chocolate.",
-    negativeNotes: "None",
+    description: " Belgium is like a Delicious Chocolate.",
+    negativeNotes: "It is gorgeous. Be Vanilla with Chocolate.",
     profile:[user3, user1]
 
 })

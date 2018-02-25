@@ -48,9 +48,24 @@ li{
   height:300px;
   width:200px;
 }
-#belgium{
-height:200px;
+#belgium1{
+height:250px;
 width:auto;
 align:center;
+padding: 10px;
 }
+
+
+#exp {
+  font-family: cursive;
+  font-size: 30px;
+  color: white;
+
+}
+.facts {
+    font-family: cursive;
+    font-size: 10px;
+    color: white;
   
+  
+}
