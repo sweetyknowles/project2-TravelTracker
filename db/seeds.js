@@ -62,7 +62,7 @@ const Belgium = new Destination({
     photo: "/images/belgia.jpg",
     description: " Belgium is like a Delicious Chocolate.",
     negativeNotes: "It is gorgeous. Be Vanilla with Chocolate.",
-    profile: [user3, user1]
+     profile: [user3, user1]
 
 })
 

@@ -8,6 +8,7 @@ const destinationSchema = new Schema({
   photo: String,
   description: String,
   negativeNotes: String,
+  facts:String,
 
 
   profile: [profileSchema] // This sets up a one to many relationship
