@@ -1,4 +1,4 @@
- <h1>Edit {{destination.name}}</h1>
+<h1>Edit {{destination.name}}</h1>
 <form method="POST" action="/destinations/{{id}}?_method=PATCH">
   <div>
     <label for="name">Name of Destination</label>
@@ -8,8 +8,18 @@
     <label for="description">Description</label>
     <input type="text" name="destination" value="{{destination.location}}">
   </div>
-  
-  <button type="submit">Add destination</button>
+
+  <br>
+  <div class="left-align">
+                    <button class="btn waves-effect waves-light teal lighten-2" type="submit" name="action">Update Belgium
+                        <i class="material-icons left">plane_flight</i>
+                    </button>
+                </div>
 </form>
 <br>
-<a href="/destinations/{{id}}">Back to Belgium {{destination.name}}</a>
+
+<div class="left-align ">
+  <a class="waves-effect waves-light btn teal lighten-1 " <a href="/destinations/{{id}}">Back to Belgium {{destination.name}}
+    <i class="material-icons left ">flight_takeoff</i>
+  </a>
+</div>

@@ -1,13 +1,13 @@
 <div id="exp">
   <h1>
-    {{destination.name}}</h1>
+    {{destination.name}}</h1><div id="belflag"><img id="belgium3" src="/images/belflag.gif"></div>
   <h4>{{destination.description}}</h4>
   {{!--
   <div id="bel">
     <img src="{{destination.photo}}" />
   </div> --}}
 
-  <p>Experience:{{destination.negativeNotes}}</p>
+  <p>Experience : {{destination.negativeNotes}}</p>
 </div>
 <br>
 
@@ -77,13 +77,18 @@
   </div>
   <br></br>
 
-  <form action="/destinations/{{destination.id}}?_method=DELETE" method="post">
-    <button type="submit">Delete {{destaintion.name}}</button>
+  
+    
 
-    <div class="left-align">
-      <a class="waves-effect waves-light btn teal lighten-1" submit ">
-      <i class="material-icons left ">flight_takeoff</i>Delete {{destination.name}}</a>
-  </div>
+
+<form method="POST" action="/users/{{attendee.id}}?_method=DELETE">
+            <div class="left-align">
+                <button class="btn waves-effect waves-light red lighten-2" type="submit" name="action" />Delete {{destination.name}}
+                <i class="material-icons left">clear</i>
+                </button>
+            </div>
+        </form>
+
 
 
   </form>
