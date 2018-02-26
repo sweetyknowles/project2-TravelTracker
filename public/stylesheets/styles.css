@@ -41,6 +41,12 @@ width:1000px;
 align:center;
 
 }
+.facts {
+  font-family: cursive;
+  font-size: 10px !important;
+  color: white;
+}
+
 li{
   font-size: 50px; 
 }
@@ -64,7 +70,7 @@ padding: 10px;
 }
 .facts {
     font-family: cursive;
-    font-size: 10px;
+    font-size: 20px !important;
     color: white;
   
   
