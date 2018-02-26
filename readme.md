@@ -14,8 +14,10 @@ Trello Board
 
 **Three models**
 
-The user: who will be using the app to store data about his travels. User will be able to add information of his travelled destinations,be able to update,edit and delete the informaiton and pics, he wishes to share. Complete RESTful routes.
-He can also go to the members sides and read of their expereince about the place. 
+Plot: The user will have his/her own Login credentials to be able to perform CRUD on his account. On the landing page the guests should be able to visit the destinaitons and see members terstimonies (expereince) about the particular destination.  
+
+The user: who will be using the app to store his expereince about his travels. User will be able to add information of his travelled destinations,be able to update,edit and delete the informaiton and pics, he wishes to share. Complete RESTful routes.
+a guest should be be to go to the members sides and read of their expereince about a perticular desitnation. they will be able to become a memeber on the website if htey may wish to share their expreinces about a destination, and be ablet o add that to the website.
 
 This app uses Mongo queries and the Mongoose module to communicate with a document database.
 There will be Promises to help build some queries.
