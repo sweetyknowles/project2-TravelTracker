@@ -1,8 +1,7 @@
 **Travel Testimonial App.**
 
 Overview
-Travel Tracker is a full stack application, that will help its users to keep track of their travel plans. The app will have two options for the user to keep the travel arrangmentsplannig hassle free. The user can add to his/her destinations' wish list t be travelled in future. The user will also be able to keep track of the places that he/she has already travelled(if he is  frequent a traveller with dates.) 
-
+Travel Testomonial is a full stack application, that will help its users to keep track of their travelled plans. The app will have two options for the members to keep the travelled destination testimonial log. The user can add to his/her destinations' profile details and destinations travelled. The guests will be able to browse the website and read through the expereinces mentioned by the members of the places they have been to. Only after they become a member will able to perform CRUD on their information. 
 **Project Links**
 
 Heroku
