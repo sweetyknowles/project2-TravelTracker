@@ -9,8 +9,8 @@ const destinationSchema = new Schema({
   description: String,
   negativeNotes: String,
 
-  
-  profile: [ profileSchema ] // This sets up a one to many relationship
+
+  profile: [profileSchema] // This sets up a one to many relationship
 })
 
 module.exports = destinationSchema

@@ -24,7 +24,7 @@ const user1 = new Profile({
     location: 'Los Angeles',
     phonenumber: 4448383845823,
     photo: "/images/larry.jpg"
-    
+
 })
 
 const user2 = new Profile({
@@ -32,7 +32,7 @@ const user2 = new Profile({
     location: 'Chicago',
     phonenumber: 884028402,
     photo: "/images/larry.jpg"
-    
+
 })
 const user3 = new Profile({
     name: 'Zuriel',
@@ -49,7 +49,7 @@ const user4 = new Profile({
 })
 
 
-const Italy = new Destination ({
+const Italy = new Destination({
     name: "Italy",
     photo: "/images/venice.jpg",
     description: "I love Italian beaches and food!",
@@ -57,29 +57,29 @@ const Italy = new Destination ({
     profile: [user4, user2]
 })
 
-const Belgium = new Destination ({
+const Belgium = new Destination({
     name: "Belgium",
     photo: "/images/belgia.jpg",
     description: " Belgium is like a Delicious Chocolate.",
     negativeNotes: "It is gorgeous. Be Vanilla with Chocolate.",
-    profile:[user3, user1]
+    profile: [user3, user1]
 
 })
 
-const Rome = new Destination ({
+const Rome = new Destination({
     name: "Rome",
     photo: "images/rome3.jpg",
     description: " Rome is ROme!.",
     negativeNotes: "dress like a roman when in Rome",
-    profile:[user2]
+    profile: [user2]
 })
-const Texas = new Destination ({
-    
+const Texas = new Destination({
+
     name: "Texas",
     photo: "images/texas2.jpg",
     description: " EEEEHAAA!.",
     negativeNotes: "visit in winter or be prepare to get fried with 100 degrees",
-    profile:[user1]
+    profile: [user1]
 })
 
 
@@ -96,12 +96,12 @@ Destination.remove().then(() => {
     /// build out new profiles and destinations
     // and save them to the database
 
-    return Destination.insertMany([Belgium, Rome, Texas,Italy])
+    return Destination.insertMany([Belgium, Rome, Texas, Italy])
 }).then(() => {
     console.log('Saved succeffully')
     db.close()
 }).catch((err) => {
-console.log(err)
+    console.log(err)
 })
 
 

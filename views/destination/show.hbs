@@ -1,6 +1,9 @@
 <div id="exp">
   <h1>
-    {{destination.name}}</h1><div id="belflag"><img id="belgium3" src="/images/belflag.gif"></div>
+    {{destination.name}}</h1>
+  <div id="belflag">
+    <img id="belgium3" src="/images/belflag.gif">
+  </div>
   <h4>{{destination.description}}</h4>
   {{!--
   <div id="bel">
@@ -38,7 +41,7 @@
 <ul>
 
   <div class="right-align">
-    <a class="waves-effect waves-light btn teal lighten-1" <a href="/destinations/{{destinationId}}/profile">Member's Review of Belgium">
+    <a class="waves-effect waves-light btn teal lighten-1" <a href="/destinations/{{destinationId}}/profile">Member's Review of {{destination.name}}">
       <i class="material-icons left">flight_takeoff</i>
     </a>
   </div>
@@ -77,24 +80,25 @@
   </div>
   <br></br>
 
-  
-    
 
 
-<form method="POST" action="/users/{{attendee.id}}?_method=DELETE">
-            <div class="left-align">
-                <button class="btn waves-effect waves-light red lighten-2" type="submit" name="action" />Delete {{destination.name}}
-                <i class="material-icons left">clear</i>
-                </button>
-            </div>
-        </form>
+
+
+  <form method="POST" action="/users/{{attendee.id}}?_method=DELETE">
+    <div class="left-align">
+      <button class="btn waves-effect waves-light red lighten-2" type="submit" name="action" />Delete {{destination.name}}
+      <i class="material-icons left">clear</i>
+      </button>
+    </div>
+  </form>
 
 
 
   </form>
   <br></br>
 
-   <div class="right-align ">
-    <a class="waves-effect waves-light btn teal lighten-1 "<a href="/destinations ">All Destinations
-      <i class="material-icons left ">flight_takeoff</i></a>
+  <div class="right-align ">
+    <a class="waves-effect waves-light btn teal lighten-1 " <a href="/destinations ">All Destinations
+      <i class="material-icons left ">flight_takeoff</i>
+    </a>
   </div>

@@ -5,9 +5,9 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   location: String,
-  phonenumber:Number,
+  phonenumber: Number,
   photo: String
-  
+
 
 })
 

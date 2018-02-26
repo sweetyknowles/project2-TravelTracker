@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
   // Find the destinationby route params defined in app.js
   Destination.findById(req.params.destinationId).then((destination) => {
-    
+
     // Pass all profiles and the destinations to a view specifically for showing all destinations
     const profiles = destination.profile
     console.log(profiles)
@@ -56,7 +56,7 @@ router.post('/', (req, res) => {
   }).then((updatedDestination) => {
 
     // Redirect to all profiles
-    res.redirect(`/destinations/${req.params.destinationId}/profiles`)
+    res.redirect(`/destinations/${req.params.destinationId}/profile`)
   })
 })
 
@@ -118,7 +118,7 @@ router.patch('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   Destination.findById(req.params.destinationId).then((destination) => {
     const profile = destination.profiles.id(req.params.id)
-    .remove()
+      .remove()
     return destination.save()
   }).then(() => {
     res.redirect(`/destination/${req.params.destinationId}/profiles`)

@@ -1,6 +1,6 @@
 <h1>Edit Profile</h1>
 <form method="POST" action="/destinations/{{destinationId}}/profiles/{{profile._id}}?_method=PATCH">
- <div>
+  <div>
     <label for="name">Profile</label>
     <input type="text" name="name" value="{{profile.name}}">
   </div>
@@ -12,10 +12,10 @@
   <br>
   <div>
     <label for="phonenumber">Phone Number</label>
-    <input type="number"name="phonenumber" value="{{profile.phonnumber}}">
-    
-  
-   <button type="submit">Edit Profile</button>
+    <input type="number" name="phonenumber" value="{{profile.phonnumber}}">
+
+
+    <button type="submit">Edit Profile</button>
 
 
 </form>
