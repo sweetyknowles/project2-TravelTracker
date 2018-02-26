@@ -14,11 +14,8 @@ Trello Board
 
 **Three models**
 
-The user: who will be using the app to store data about his travels.  
-Data for Destination Wish List : This will have the collection of wished to be travelled destinatins.
-Data of ALready travelled Destinations: This will have the the collection of all the places the user has already been to.
-
-Travel Tracker has a Complete RESTful routes for at least one resource, in ths case All destinations that have been covered by the user.The RESTful route will be with GET, POST, PUT, and DELETE.
+The user: who will be using the app to store data about his travels. User will be able to add information of his travelled destinations,be able to update,edit and delete the informaiton and pics, he wishes to share. Complete RESTful routes.
+He can also go to the members sides and read of their expereince about the place. 
 
 This app uses Mongo queries and the Mongoose module to communicate with a document database.
 There will be Promises to help build some queries.
