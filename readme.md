@@ -20,13 +20,20 @@ He can also go to the members sides and read of their expereince about the place
 This app uses Mongo queries and the Mongoose module to communicate with a document database.
 There will be Promises to help build some queries.
 *****************************************
+
 **Planning Process**
 ERDs- (Entity Relationship Diagram) -provided images
 
-https://i.imgur.com/kQGszWI.jpg --MVP ERD
-https://i.imgur.com/OrxyjYb.jpg -- InDepth ERD
+<!-- https://i.imgur.com/kQGszWI.jpg --MVP ERD
+https://i.imgur.com/OrxyjYb.jpg -- InDepth ERD -->
+
+
+https://i.imgur.com/G03mMvy.jpg?1
 
 Wireframes-designed during the planning process.
+
+https://i.imgur.com/3nRTOAW.jpg
+
 
 Heroku Link
 
