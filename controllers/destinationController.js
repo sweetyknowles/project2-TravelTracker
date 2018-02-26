@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
 
     // THEN redirect to the new destinations page
     // Remember POST/PUT/PATCH/DELETE routes should not render or send anything
-    res.redirect(`/destinations/${savedDestination._id}`)
+    res.redirect(`/destinations`)
   }).catch((err) => {
     console.log(err)
   })
