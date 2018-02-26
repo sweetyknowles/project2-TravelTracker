@@ -1,49 +1,55 @@
 <div id="exp">
-<h1>
-  {{destination.name}}</h1>
-<h4>{{destination.description}}</h4>
-{{!--
-<div id="bel">
-  <img src="{{destination.photo}}" />
-</div> --}}
+  <h1>
+    {{destination.name}}</h1>
+  <h4>{{destination.description}}</h4>
+  {{!--
+  <div id="bel">
+    <img src="{{destination.photo}}" />
+  </div> --}}
 
   <p>Experience:{{destination.negativeNotes}}</p>
 </div>
 <br>
 
 <div>
-<ul>
-  <li class="facts">1. The Big Bang theory originated in Belgium – it was a Belgian, the priest and physicist (apparently not a contradiction
-    in terms) Georges Lemaitre, who first came up with what is now called the Big Bang theory of the origin of the universe
-    in 1927. The theory is often attributed to Edwin Hubble, although records show Lemaitre published a similar theory two
-    years before Hubble.</li>
-<br>
-  <li class="facts">2. Brussels South Charleroi Airport is the most punctual airport in Europe – and it is ranked as the world's second best
-    airport for on-time performance, just behind Japan's Osaka International, in OAG's punctuality report.</li>
-<br>
-  <li class="facts">3. Cricket is thought to be a Belgian invention, not British – academics believe immigrants from north Belgium could have
-    imported the game to Britain, based on a poem thought to have been written in 1533 that calls Flemish weavers ‘king of
-    crekettes’ and also mentions ‘wickettes’, predating English references dating to the 1600s.</li>
-<br>
-  <li class="facts">4. Belgian men are the second tallest in the world – with a height of 181.7cm, only Dutchmen are taller at 182.5cm. The
-    same can't be said for Belgian women, however, who rank 21 at 165.5cm tall.</li>
-<br>
-  <li class="facts">5. The highest point in Belgium is lower than the world's tallest building – the Signal de Botrange on the High Fens plateau
-    in far-east Belgium is the highest point at 694m, shorter than the world's tallest building in Dubai, the Burj Khalifa
-    at 828m. Belgium along with the Netherlands and Luxembourg are historically known as the Low Countries.</li>
-</ul>
+  <ul>
+    <li class="facts">1. The Big Bang theory originated in Belgium – it was a Belgian, the priest and physicist (apparently not a contradiction
+      in terms) Georges Lemaitre, who first came up with what is now called the Big Bang theory of the origin of the universe
+      in 1927. The theory is often attributed to Edwin Hubble, although records show Lemaitre published a similar theory
+      two years before Hubble.</li>
+    <br>
+    <li class="facts">2. Brussels South Charleroi Airport is the most punctual airport in Europe – and it is ranked as the world's second best
+      airport for on-time performance, just behind Japan's Osaka International, in OAG's punctuality report.</li>
+    <br>
+    <li class="facts">3. Cricket is thought to be a Belgian invention, not British – academics believe immigrants from north Belgium could
+      have imported the game to Britain, based on a poem thought to have been written in 1533 that calls Flemish weavers
+      ‘king of crekettes’ and also mentions ‘wickettes’, predating English references dating to the 1600s.</li>
+    <br>
+    <li class="facts">4. Belgian men are the second tallest in the world – with a height of 181.7cm, only Dutchmen are taller at 182.5cm. The
+      same can't be said for Belgian women, however, who rank 21 at 165.5cm tall.</li>
+    <br>
+    <li class="facts">5. The highest point in Belgium is lower than the world's tallest building – the Signal de Botrange on the High Fens
+      plateau in far-east Belgium is the highest point at 694m, shorter than the world's tallest building in Dubai, the Burj
+      Khalifa at 828m. Belgium along with the Netherlands and Luxembourg are historically known as the Low Countries.</li>
+  </ul>
 </div>
 
 <br>
 <ul>
 
-  <a href="/destinations/{{destinationId}}/profile">Member's Review of Belgium</a>
+  <div class="right-align">
+    <a class="waves-effect waves-light btn teal lighten-1" <a href="/destinations/{{destinationId}}/profile">Member's Review of Belgium">
+      <i class="material-icons left">flight_takeoff</i>
+    </a>
+  </div>
+
+
   <br></br>
-  {{#each destination.profile}}
+  {{#each destination.profile}} {{!--
   <div>
     <li>{{profile.name}}</li>
     <a href="/destinations/{{destinations._id}}/profile/{{_id}}">{{name}}</a>
-  </div>
+  </div> --}}
   <br> {{/each}}
 </ul>
 
@@ -65,12 +71,25 @@
 
 
 <div>
-  <a href="/destinations/{{destinationId}}/edit">Edit {{destination.name}}</a>
-</div>
-<br></br>
+  <div class="left-align">
+    <a class="waves-effect waves-light btn teal lighten-1" <a href="/destinations/{{destinationId}}/edit">
+      <i class="material-icons left">flight_takeoff</i>Edit {{destination.name}}</a>
+  </div>
+  <br></br>
 
-<form action="/destinations/{{destination.id}}?_method=DELETE" method="post">
-  <button type="submit">Delete {{destaintion.name}}</button>
-</form>
-<br></br>
-<a href="/destinations">All Destinations</a>
+  <form action="/destinations/{{destination.id}}?_method=DELETE" method="post">
+    <button type="submit">Delete {{destaintion.name}}</button>
+
+    <div class="left-align">
+      <a class="waves-effect waves-light btn teal lighten-1" submit ">
+      <i class="material-icons left ">flight_takeoff</i>Delete {{destination.name}}</a>
+  </div>
+
+
+  </form>
+  <br></br>
+
+   <div class="right-align ">
+    <a class="waves-effect waves-light btn teal lighten-1 "<a href="/destinations ">All Destinations
+      <i class="material-icons left ">flight_takeoff</i></a>
+  </div>

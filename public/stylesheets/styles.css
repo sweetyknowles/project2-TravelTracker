@@ -35,7 +35,7 @@ a {
   font-weight:bold;
 
 }
-.photostyle{
+.photostyle {
 height:400px;
 width:1000px;
 align:center;
@@ -50,11 +50,11 @@ align:center;
 li{
   font-size: 50px; 
 }
-.photostylepro{
+.photostylepro {
   height:300px;
   width:200px;
 }
-#belgium1{
+#belgium1 {
 height:250px;
 width:auto;
 align:center;
@@ -72,6 +72,18 @@ padding: 10px;
     font-family: cursive;
     font-size: 20px !important;
     color: white;
-  
-  
+  }
+
+#header {
+  font-family: cursive;
+  text-align: center;
+  color: white;
+  font-size: 30px !important;
+
+}
+#heading {
+  font-family: cursive;
+text-align: center;
+color:white;
+font-size: 8px;
 }
